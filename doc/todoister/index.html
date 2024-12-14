@@ -41,17 +41,8 @@ export</a></li>
 <div class="col-xl-10"><p><a href="https://parroquiano.github.io/doc/todoister/" class="translated">Leer
 en español</a></p><img src="img/icon.png" class="icon"><h1
 id="todoister">Todoister</h1>
-<p>Lorem ipsum dolor sit amet,</p>
-<p>consectetur adipiscing elit.</p>
-<h3 id="options">Options</h3>
-<dl>
-<dt>
-<code>-t</code>, <code>--token</code> <code>&lt;string&gt;</code>
-</dt>
-<dd>
-Override Todoist token
-</dd>
-</dl>
+<p>Todoister is a simple Todoist CLI client written in Go.</p>
+<h3 id="commands">Commands</h3>
 <ul>
 <li><a href="#todoister-version">todoister version</a> - Print the
 version number</li>
@@ -62,102 +53,115 @@ tasks</li>
 in JSON or YAML format</li>
 </ul>
 <h2 id="todoister-version">todoister version</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> version</span></code></pre></div>
-<h3 id="common-options">Common options</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> version <span class="pp">[</span><span class="ss">flags</span><span class="pp">]</span></span></code></pre></div>
+<p>Print the Todoister version number.</p>
+<h3 id="global-options">Global Options</h3>
 <dl>
 <dt>
 <code>-t</code>, <code>--token</code> <code>&lt;string&gt;</code>
 </dt>
 <dd>
-Override Todoist token
+use <code>&lt;string&gt;</code> as Todoist API token
 </dd>
 </dl>
 <h2 id="todoister-list">todoister list</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> list <span class="pp">[</span><span class="ss">project</span><span class="pp">]</span>...</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> list <span class="pp">[</span><span class="ss">project</span><span class="pp">]</span>... <span class="pp">[</span><span class="ss">flags</span><span class="pp">]</span></span></code></pre></div>
 <p>List projects and subprojects.</p>
-<p>project... are the names of one or more project or subproject names
-to list. If no project name is given, all projects are listed. You can
-specify a project name by its full path, e.g., "Work/Project". Names are
-case-insensitive.</p>
-<h3 id="common-options-1">Common options</h3>
+<p><code>project</code> is the name of one or more projects to list
+tasks from. If no <code>project</code> is given, all projects are
+listed. You can specify a project name by its full path, e.g.,
+<code>Work/Project</code>. Names are case-insensitive.</p>
+<h3 id="global-options-1">Global Options</h3>
 <dl>
 <dt>
 <code>-t</code>, <code>--token</code> <code>&lt;string&gt;</code>
 </dt>
 <dd>
-Override Todoist token
+use <code>&lt;string&gt;</code> as Todoist API token
 </dd>
 </dl>
 <h3 id="examples">Examples</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> ls</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> ls Work Life</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> ls Work/Project</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List all projects and subprojects:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> ls</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># List projects Work and Life and their subprojects:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> ls Work Life</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># List all subprojects of Project, which is a subproject of Work:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> ls Work/Project</span></code></pre></div>
 <h2 id="todoister-tasks">todoister tasks</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> tasks project...</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> tasks project... <span class="pp">[</span><span class="ss">flags</span><span class="pp">]</span></span></code></pre></div>
 <p>List project tasks.</p>
-<p>project... are the names of one or more projects whose tasks to list.
-You can specify a project name by its full path, e.g., "Work/Project".
-Names are case-insensitive.</p>
-<h3 id="common-options-2">Common options</h3>
+<p><code>project</code> is the name of one or more projects to list
+tasks from. You can specify a project name by its full path, e.g.,
+<code>Work/Project</code>. Names are case-insensitive.</p>
+<h3 id="global-options-2">Global Options</h3>
 <dl>
 <dt>
 <code>-t</code>, <code>--token</code> <code>&lt;string&gt;</code>
 </dt>
 <dd>
-Override Todoist token
+use <code>&lt;string&gt;</code> as Todoist API token
 </dd>
 </dl>
 <h3 id="examples-1">Examples</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> tasks Life</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> tasks Work/Project</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List tasks for project Life:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> tasks Life</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># List tasks for subproject Project of project Work:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> tasks Work/Project</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span></code></pre></div>
 <h2 id="todoister-export">todoister export</h2>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> export <span class="pp">[</span><span class="ss">path</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">flags</span><span class="pp">]</span></span></code></pre></div>
-<p>Export all Todoist projects.</p>
+<p>Export all Todoist projects as a tree of JSON or YAML files.</p>
 <ul>
-<li><p><code>path</code> file or directory where to export the projects,
-by default <code>index.json</code> or <code>index.yaml</code> (if
-<code>--yaml</code> is specified) in the current directory.</p></li>
-<li><p><code>-d</code>, <code>--depth N</code> when provided, todoister
-will create directories up to <code>N</code> levels deep, writing each
-subproject to a separate file.</p></li>
+<li><code>path</code> is a file or directory where to export the
+projects, by default <code>index.json</code>.</li>
 </ul>
-<h3 id="options-1">Options</h3>
+<h3 id="options">Options</h3>
 <dl>
 <dt>
 <code>-d</code>, <code>--depth</code> <code>&lt;int&gt;</code>
 </dt>
 <dd>
-Depth of subdirectory tree when exporting (default 0, i.e., no
-subdirectories)
+depth of subdirectory tree to create on the filesystem when exporting
+(default is 0, i.e., no subdirectories)
 </dd>
 <dt>
 <code>--json</code>
 </dt>
 <dd>
-Export in JSON format (default)
+export in JSON format (default)
 </dd>
 <dt>
 <code>--yaml</code>
 </dt>
 <dd>
-Export in YAML format
+export in YAML format
 </dd>
 </dl>
-<h3 id="common-options-3">Common options</h3>
+<h3 id="global-options-3">Global Options</h3>
 <dl>
 <dt>
 <code>-t</code>, <code>--token</code> <code>&lt;string&gt;</code>
 </dt>
 <dd>
-Override Todoist token
+use <code>&lt;string&gt;</code> as Todoist API token
 </dd>
 </dl>
 <h3 id="examples-2">Examples</h3>
 <div class="sourceCode" id="cb7"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> export</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> export ~/todoist.json</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> export ~/todoist.yaml <span class="at">--yaml</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> export ~/projects <span class="at">--json</span> <span class="at">-d</span> 3</span></code></pre></div></div>
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Export to a single index.json file in the current directory:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> export</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Export to todoist.json file in the home directory:</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> export ~/todoist.json</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Export to todoist.yaml file in the home directory:</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> export ~/todoist.yaml <span class="at">--yaml</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Export to a projects directory in the home, with subdirectories down to 3 levels deep:</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ex">todoister</span> export ~/projects <span class="at">--json</span> <span class="at">-d</span> 3</span></code></pre></div></div>
 </div>
 </div>
 <!-- jQuery -->
@@ -177,13 +181,11 @@ function load() { if (window.location.hash) shiftWindow(); }
 <!-- Footer -->
 <footer class="footer text-muted">
 <div align="center">
-Content is available
-under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+2024 Marco Bravo Mejías
 <br>
 Source code licensed
 under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
-<br>
-Copyright © 2024 Marco Bravo Mejías
 <br>
 Built
 with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a>
