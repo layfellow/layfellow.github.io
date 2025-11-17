@@ -1,22 +1,6 @@
 /*
  * Combined and simplified custom styles for layfellow.net
- * Generated: 2025-09-28 00:15
- *
- * This file combines:
- * - styles-202503312025.css (base theme and normalize.css)
- * - mystyles-202411020315.css (custom overrides and enhancements)
- *
- * Updates:
- * - Reduced button-square icon sizes by 20%
- * - Fixed hamburger menu hover state bug on mobile
- * - Improved hamburger button styling with explicit default states
- * - Standardized share button sizes to match header button sizes
- * - Increased share button sizes by 10% for better prominence
  */
-
-/* ============================================================================
- * BASE THEME STYLES (from styles-202503312025.css)
- * ============================================================================ */
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 html { line-height: 1.15; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
@@ -87,7 +71,7 @@ template { display: none; }
 
 /* Base theme styles */
 html, body { height: 100%; }
-body { background: #fefefe; color: #424242; font-family: "Open Sans", arial, sans-serif; font-size: 15px; }
+body { background: #fefefe; color: #424242; font-family: "Fira Sans", arial, sans-serif; font-size: 15px; }
 h1, h2, h3, h4, h5, h6 { margin-bottom: 20px; text-transform: none; }
 h1 { font-size: 22px; }
 h2 { font-size: 20px; }
@@ -95,7 +79,7 @@ h3 { font-size: 17px; margin-bottom: 20px; }
 h4 { font-size: 15px; margin-bottom: 5px; }
 h5 { font-size: 14px; margin-bottom: 15px; }
 h6 { font-size: 12px; margin-bottom: 12px; }
-p { line-height: 1.8; margin: 0 0 30px; }
+p { line-height: 1.6; margin: 0 0 30px; }
 a { color: #c55400; text-decoration: none; }
 ul, ol { line-height: 1.4; margin: 0 0 20px; }
 ul ul, ul ol, ol ul, ol ol { margin: 10px 0 0 20px; }
@@ -138,7 +122,7 @@ table tr { border-bottom: 1px dotted #aeadad; }
 .site-logo { display: block; }
 .site-logo img { margin: 0; }
 .site-nav { list-style: none; margin: 28px 0 10px 30px; padding: 0;}
-.site-nav-item { display: inline-block; font-size: 14px; font-weight: 700; margin: 0 10px; }
+.site-nav-item { display: inline-block; font-size: 0.95em; font-weight: 700; margin: 0 10px; }
 .site-nav-item a:hover { color: #424242; }
 #latest-post { display: none; }
 .post-container { margin: 0; }
@@ -190,10 +174,10 @@ table tr { border-bottom: 1px dotted #aeadad; }
 .author-meta a { color: #aeadad; }
 .author-meta a:hover { color: #c55400; }
 .author-bio { margin: 20px auto 0; text-align: center; max-width: 700px; }
-.footer { background: #303030; color: #d3d3d3; height: 265px; margin-top: 95px; overflow: auto; }
+.footer { background: #303030; color: #d3d3d3; height: 18em; margin-top: 95px; overflow: auto; }
 .footer .site-title-wrapper { margin: 80px auto 35px; }
 .footer .site-title a:hover, .footer .button-square:hover { background: #121212; }
-.footer-copyright { color: #656565; font-size: 13px; margin: 0; text-align: center; text-transform: uppercase; }
+.footer-copyright { color: #656565; font-size: 0.9em; margin: 0; text-align: center; text-transform: uppercase; line-height: 2.2 }
 .footer-copyright a { color: #656565; font-weight: 700; }
 .footer-copyright a:hover { color: #fefefe; }
 #nprogress .bar { background: #c55400; }
@@ -253,11 +237,11 @@ table tr { border-bottom: 1px dotted #aeadad; }
 }
 
 /* ============================================================================
- * CUSTOM OVERRIDES AND ENHANCEMENTS (from mystyles-202411020315.css)
+ * CUSTOM OVERRIDES AND ENHANCEMENTS
  * ============================================================================ */
 
 body {
-	font-size: 0.95em;
+	font-size: 1em;
 }
 
 code, kbd, samp {
@@ -343,7 +327,7 @@ blockquote p {
 
 .button-square  {
     border-radius: 18px;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	padding: 10px;
 	width: 1.3em;
 }
@@ -372,9 +356,9 @@ blockquote p {
 }
 
 .site-nav-item a.hamburger {
-	font-size: 1.3em;
+	font-size: 1.2em;
     margin: 0 0 0 8px;
-    padding: 8px 10px 9px 11px;
+    padding: 8px 9px 8px 9px;
 	display: none;
 }
 
@@ -564,6 +548,7 @@ blockquote p {
 }
 
 .big-icon {
+	fill: #424242;
 	padding: 1em;
 }
 
@@ -603,7 +588,7 @@ blockquote p {
 figure img,
 figure picture,
 figure picture img {
-	max-width: 95%;
+	max-width: 100%;
 	height: auto;
 	display: block;
 }
@@ -630,7 +615,7 @@ figure.float-right {
 	figure.float-left,
 	figure.float-right {
 		float: none;
-		margin: 0 0 20px 0;
-		max-width: 100%;
+		margin: 0 auto 20px auto;
+		max-width: 53%;
 	}
 }
